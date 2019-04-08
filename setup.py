@@ -11,7 +11,7 @@
 import os
 import sys
 import glob
-from distutils.core import setup
+from setuptools import setup
 from platform import system
 
 _S = system()
@@ -31,6 +31,7 @@ try:
     cmd_class ={'build_sphinx': BuildDoc}
 except ImportError:
     cmd_class = {}
+
 
 packages = ['pyreadline','pyreadline.clipboard','pyreadline.configuration',
             'pyreadline.console','pyreadline.keysyms','pyreadline.lineeditor',
@@ -57,4 +58,3 @@ setup(name=name,
       data_files       = [],
       cmdclass = cmd_class
       )
-
