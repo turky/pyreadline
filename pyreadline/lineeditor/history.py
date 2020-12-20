@@ -34,7 +34,7 @@ class LineHistory(object):
 
     def get_current_history_length(self):
         '''Return the number of lines currently in the history.
-        (This is different from get_history_length(), which returns
+        (This is different from get_history_length(), which returns 
         the maximum number of lines that will be written to a history file.)'''
         value = len(self.history)
         log("get_current_history_length:%d"%value)
@@ -74,7 +74,7 @@ class LineHistory(object):
         self.history[:] = []
         self.history_cursor = 0
 
-    def read_history_file(self, filename=None):
+    def read_history_file(self, filename=None): 
         '''Load a readline history file.'''
         if filename is None:
             filename = self.history_filename
@@ -85,7 +85,7 @@ class LineHistory(object):
             self.history = []
             self.history_cursor = 0
 
-    def write_history_file(self, filename = None):
+    def write_history_file(self, filename = None): 
         '''Save a readline history file.'''
         if filename is None:
             filename = self.history_filename
@@ -201,7 +201,7 @@ class LineHistory(object):
             if (self.lastcommand != self.history_search_forward and
                     self.lastcommand != self.history_search_backward):
                 self.query = ''.join(partial[0:partial.point].get_line_text())
-            hcstart = max(self.history_cursor,0)
+            hcstart = max(self.history_cursor,0) 
             hc = self.history_cursor + direction
             while (direction < 0 and hc >= 0) or (direction > 0 and hc < len(self.history)):
                 h = self.history[hc]

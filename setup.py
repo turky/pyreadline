@@ -11,7 +11,7 @@
 import os
 import sys
 import glob
-from setuptools import setup
+from distutils.core import setup
 from platform import system
 
 _S = system()
